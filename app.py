@@ -65,12 +65,13 @@ def usuario_():
     global usuario
     global janela_usuario
     janela_usuario = tk.Window(themename='litera')
+    janela_usuario.state('zoomed')
 
     opcoes = tk.Frame(janela_usuario, padding=50)
     opcoes.grid(column=1, row=1)
-    
-    tk.Label(opcoes, text=' Quem é você? ', padding=40).grid(column=1, row=1, columnspan=3)
+    opcoes.place(relx=0.5, rely=0.5, anchor='center')
 
+    tk.Label(opcoes, text=' Quem é você? ', padding=40).grid(column=1, row=1, columnspan=3)
     tk.Button(opcoes, text="Aluno", command=aluno_).grid(column=1, row=3)
     tk.Button(opcoes, text="Professor", command=professor_).grid(column=2, row=3)
     tk.Button(opcoes, text="Outros", command=outros_).grid(column=3, row=3)
@@ -81,17 +82,18 @@ def usuario_():
 def abrir_feedback():
     global janela_feedback
     janela_feedback = tk.Window(themename='litera')
+    janela_feedback.state('zoomed')
 
     opcoes = tk.Frame(janela_feedback, padding=50)
     opcoes.grid(column=1, row=1)
-    
-    tk.Label(opcoes, text=' Qual seu nível de satisfação? ', padding=40).grid(column=1, row=1, columnspan=5)
+    opcoes.place(relx=0.5, rely=0.5, anchor='center')
 
-    tk.Button(opcoes, text="\U0001F621", command=satisfacao1_).grid(column=1, row=3)  
-    tk.Button(opcoes, text="\U0001F641", command=satisfacao2_).grid(column=2, row=3)  
-    tk.Button(opcoes, text="\U0001F610", command=satisfacao3_).grid(column=3, row=3)  
-    tk.Button(opcoes, text="\U0001F643", command=satisfacao4_).grid(column=4, row=3) 
-    tk.Button(opcoes, text="\U0001F60A", command=satisfacao5_).grid(column=5, row=3)  
+    tk.Label(opcoes, text=' Qual seu nível de satisfação? ', padding=40).grid(column=1, row=1, columnspan=5)
+    tk.Button(opcoes, text="\U0001F621", command=satisfacao1_).grid(column=1, row=3)
+    tk.Button(opcoes, text="\U0001F641", command=satisfacao2_).grid(column=2, row=3)
+    tk.Button(opcoes, text="\U0001F610", command=satisfacao3_).grid(column=3, row=3)
+    tk.Button(opcoes, text="\U0001F643", command=satisfacao4_).grid(column=4, row=3)
+    tk.Button(opcoes, text="\U0001F60A", command=satisfacao5_).grid(column=5, row=3)
 
     janela_feedback.title('Satisfação')
     janela_feedback.mainloop()
@@ -100,8 +102,7 @@ def main():
     global usuario, satisfacao
     usuario = None
     satisfacao = None
-    
-    usuario_() 
+    usuario_()
 
 if __name__ == '__main__':
     main()
