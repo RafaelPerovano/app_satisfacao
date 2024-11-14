@@ -1,0 +1,5 @@
+satisfacao1: 0
+satisfacao2: 0
+satisfacao3: 1
+satisfacao4: 0
+satisfacao5: 0
